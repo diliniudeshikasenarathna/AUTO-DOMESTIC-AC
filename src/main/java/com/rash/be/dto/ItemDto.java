@@ -7,15 +7,16 @@ import lombok.ToString;
 
 @Data
 @ToString
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class ItemDto {
     private Long id;
-    private String itemCode;
     private String name;
+    private String sku;
     private String description;
-    private String qty;
-    private String cost;
-    private String discount;
-
+    private Double price;
+    private Double cost;
+    private Integer quantity;
+    private String unit;
+    private String supplier;
+    private Integer lowStockThreshold;
 }
