@@ -1,0 +1,29 @@
+package com.rash.be.service.impl;
+
+import com.rash.be.dto.CustomerDto;
+import com.rash.be.entity.CustomerEntity;
+import com.rash.be.mapper.CustomerMapper;
+import com.rash.be.repository.CustomerRepository;
+import com.rash.be.service.CustomerService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@RequiredArgsConstructor
+@Service
+public class CustomerServiceImpl implements CustomerService {
+    final CustomerRepository customerRepository;
+    final CustomerMapper customerMapper;
+    @Override
+    public void addCustomer(CustomerDto customerDto) {
+        CustomerEntity customerEntity=customerMapper.toEntity(customerDto);
+        customerRepository.save(customerEntity);
+
+
+    }
+
+    @Override
+    public CustomerDto searchCustomerByContanct(String contactNumber) {
+       CustomerDto customerDto=customerMapper.toDto(customerRepository.findByContactNumber(contactNumber));
+       return customerDto;
+    }
+}
