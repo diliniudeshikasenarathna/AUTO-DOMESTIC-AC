@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequiredArgsConstructor
-@RequestMapping("/customer")
+@RequestMapping("/customers")
 public class CustomerController {
     final CustomerService customerService;
 
