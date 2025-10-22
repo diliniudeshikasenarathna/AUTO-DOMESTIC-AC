@@ -9,7 +9,7 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "users")
-public class UserEntity {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,5 +26,5 @@ public class UserEntity {
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name="user_id"),
             inverseJoinColumns = @JoinColumn(name="role_id"))
-    private Set<RoleEntity> roles=new HashSet<>();
+    private Set<Role> roles=new HashSet<>();
 }
