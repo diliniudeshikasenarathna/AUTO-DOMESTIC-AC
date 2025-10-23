@@ -1,6 +1,5 @@
 package com.rash.be.repository;
 
-import com.rash.be.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
